@@ -5,7 +5,7 @@ require "db"
 # objects to perform actions against a specific database.  Each adapter needs
 # to implement these methods.
 abstract class Kemalyst::Adapter::Base
-  property url : String
+  property database : DB::Database
 
   def initialize(adapter : String)
     if url = ENV["DATABASE_URL"]? || env(settings(adapter)["database"].to_s)
@@ -27,12 +27,7 @@ abstract class Kemalyst::Adapter::Base
   end
  
   def open(&block)
-    db = DB.open(@url)
-    begin
-      yield db
-    ensure
-      db.close
-    end
+    yield @database
   end
 
   # remove all rows from a table and reset the counter on the id.
