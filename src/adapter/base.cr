@@ -9,7 +9,7 @@ abstract class Kemalyst::Adapter::Base
 
   def initialize(adapter : String)
     if url = ENV["DATABASE_URL"]? || env(settings(adapter)["database"].to_s)
-      @url = url
+      @database = DB.open(url)
     else
       raise "database url needs to be set in the config/database.yml or DATABASE_URL environment variable"
     end
