@@ -1,11 +1,11 @@
 # kemalyst-model
 
-[![Build Status](https://travis-ci.org/drujensen/kemalyst-model.svg)](https://travis-ci.org/drujensen/kemalyst-model)
+[![Build Status](https://travis-ci.org/kemalyst/kemalyst-model.svg)](https://travis-ci.org/kemalyst/kemalyst-model)
 
 [Documentation](http://drujensen.github.io/kemalyst-model/)
 
-[Kemalyst](https://github.com/drujensen/kemalyst) is a web framework written in
-the [Crystal](https://github.com/manastech/crystal) language.
+[Kemalyst](https://github.com/kemalyst/kemalyst) is a web framework written in
+the [Crystal](https://github.com/crystal-lang/crystal) language.
 
 This project is to provide an ORM Model for Kemalyst.
 
@@ -19,7 +19,7 @@ well.
 ```yaml
 dependencies:
   kemalyst-model:
-    github: drujensen/kemalyst-model
+    github: kemalyst/kemalyst-model
 
   # Pick your database
   mysql:
@@ -207,7 +207,7 @@ posts = Post.all("JOIN comments c ON c.post_id = post.id
 ```
 ## Contributing
 
-1. Fork it ( https://github.com/drujensen/kemalyst-model/fork )
+1. Fork it ( https://github.com/kemalyst/kemalyst-model/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
